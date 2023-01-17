@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.css"
+    />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.js"></script>
+  </head>
+  <body>
+    <div class="box">
+      <div class="box-name">Name product</div>
+
+      <div class="box-screen">
+        <div class="box-info">
+          <div class="box-desc">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio
+            incidunt totam eum maxime illum rerum veniam tenetur ullam quas
+            dolores!
+          </div>
+          <div class="box-address">Holon, abarbanel 12</div>
+          <div class="box-salary">12000$</div>
+        </div>
+        <div class="box-map">
+          <div id="map"></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      mapboxgl.accessToken = "12";
+      consp map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v12',
+        center: [12.550343, 55.665957],
+        zoom: 12
+      })
+
+      const marker = new maoboxgl.Marker({
+        color: 'black'
+      })
+      .setLngLat([12.65147, 55.608166])
+      .addTo(map)
+    </script>
+
+    <style>
+      .box {
+        padding: 30px 10px 10px 10px;
+        font-size: 20px;
+      }
+      .box-name {
+        text-align: center;
+        font-weight: bold;
+        font-style: 22px;
+        text-transform: uppercase;
+        margin-bottom: 40px;
+      }
+      .box-desc {
+        margin-bottom: 10px;
+      }
+
+      .box-address {
+        margin-bottom: 10px;
+      }
+    </style>
+  </body>
+</html>
